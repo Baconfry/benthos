@@ -290,6 +290,11 @@ public class GridTile : Definitions
         }
     }
 
+    public List<GridTile> Get8SurroundingTiles(GridTile tile)
+    {
+        return grid.Get8SurroundingTiles(tile.xCoordinate, tile.yCoordinate);
+    }
+
     public GridTile GetFacingTile(GridTile tile)
     {
         GridTile destination = null;

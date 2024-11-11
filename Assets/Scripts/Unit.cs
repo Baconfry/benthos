@@ -74,7 +74,8 @@ public class Unit : Definitions
         }
         catch
         {
-            spriteRenderer.enabled = false;
+            //spriteRenderer.enabled = false;
+            spriteRenderer.color = new Color(.6f, .6f, .6f, 1f);
             digitDisplay.gameObject.SetActive(false);
             armorIcon.gameObject.SetActive(false);
             cooldownDisplay1.gameObject.SetActive(false);
@@ -248,6 +249,7 @@ public class Unit : Definitions
             case TileType.sand:
                 break;
             case TileType.current:
+                isMoving = true;
                 yield return StartCoroutine ("ForcedMoveTo", currentTile.GetFacingTile(currentTile));
                 break;
             case TileType.anemone:
@@ -353,7 +355,7 @@ public class Unit : Definitions
         return destinations;
     }
 
-    public virtual bool IsValidForAI(GridTile tile)
+    public virtual bool IsValidForAI(GridTile tile) //OVERRIDE: Nudibranch
     {
         if (tile.tileType == TileType.vent)
         {
@@ -495,7 +497,7 @@ public class Unit : Definitions
         currentTile.occupyingUnit = this;
     }
 
-    public virtual IEnumerator ForcedMoveTo(GridTile destination)
+    public virtual IEnumerator ForcedMoveTo(GridTile destination) //OVERRIDE: Bobbit Worm
     {
         bool startedInTrench = false;
         if (currentTile.tileType == TileType.trench) startedInTrench = true;
@@ -577,7 +579,7 @@ public class Unit : Definitions
         }
     }
 
-    public virtual void DirectPoison()
+    public virtual void DirectPoison() //OVERRIDE: Hermit Crab
     {
         isPoisoned = true;
     }
@@ -591,7 +593,7 @@ public class Unit : Definitions
         catch { }
     }
 
-    public virtual IEnumerator Heal(int healingAmount) //use for heals or for defense-ignoring damage
+    public virtual IEnumerator Heal(int healingAmount) //OVERRIDE: Hermit Crab
     {
         yield return null;
         if (currentHealth > 0)
@@ -613,31 +615,29 @@ public class Unit : Definitions
         }
     }
 
-    protected IEnumerator GetKilledBy(Unit attacker) //reward attacker for kill, if applicable
+    protected virtual IEnumerator GetKilledBy(Unit attacker) //OVERRIDE: Urchin
     {
         while (isMoving)
         {
             yield return null;
         }
 
+        //yield return new WaitForSeconds(Settings.TurnDelay);
+
         if (attacker != null && attacker.healOnKill && attacker.currentHealth < attacker.maxHealth)
         {
             yield return new WaitForSeconds(Settings.TurnDelay);
             yield return attacker.StartCoroutine("Heal", 1);
         }
-
-        if (currentHealth <= 0)
+        GameObject.Find("UnitTracker").GetComponent<UnitTracker>().RemoveUnit(this);
+        foreach (SpriteRenderer spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
         {
-            GameObject.Find("UnitTracker").GetComponent<UnitTracker>().RemoveUnit(this);           
-            foreach (SpriteRenderer spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
-            {
-                spriteRenderer.enabled = false;
-            }
-            yield return new WaitForSeconds(Settings.TurnDelay);
-            //transform.position = new Vector3(99f, 99f, 0f); //incredibly cursed unit removal method
-            //this.enabled = false;
-            Destroy(this.gameObject, 1f);
+            spriteRenderer.enabled = false;
         }
+        yield return new WaitForSeconds(Settings.TurnDelay);
+        //transform.position = new Vector3(99f, 99f, 0f); //incredibly cursed unit removal method
+        //this.enabled = false;
+        Destroy(this.gameObject, 1f);
     }
 
     public void SetWaitButtonActive(bool status)

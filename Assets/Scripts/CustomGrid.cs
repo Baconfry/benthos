@@ -160,6 +160,19 @@ public class CustomGrid : Definitions
         return tilesInRange;
     }
 
+    public List<GridTile> Get8SurroundingTiles(int x, int y)
+    {
+        List<GridTile> tilesInRange = new List<GridTile>();
+        for (int i = 0; i < gridTiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < gridTiles.GetLength(1); j++)
+            {
+                if (Mathf.Abs(x - i) <= 1 && Mathf.Abs(y - j) <= 1 && gridTiles[x, y] != gridTiles[i, j]) tilesInRange.Add(gridTiles[i, j]);
+            }
+        }
+        return tilesInRange;
+    }
+
     public void SwitchTeamPositions()
     {
         for (int i = 0; i < gridTiles.GetLength(0); i++)

@@ -68,7 +68,7 @@ public class UnitTracker : Definitions
         List<Unit> enemies = new List<Unit>();
         foreach (Unit unit in unitList)
         {
-            if (unit.playerID != id) enemies.Add(unit);
+            if (unit.playerID != id && unit.canMove) enemies.Add(unit);
         }
         return enemies;
     }
@@ -301,13 +301,13 @@ public class UnitTracker : Definitions
         yield return null;
         foreach (Unit unit in unitList)
         {
-            unit.ChangeColorTo(Color.gray);
+            if (unit.canMove) unit.ChangeColorTo(Color.gray);
         }
         while (unitList.Count > 0) //end game if all units die
         {
             foreach (Unit unit in unitList)
             {              
-                if (unit.currentTurnCooldown == 0)
+                if (unit.currentTurnCooldown == 0 && unit.canMove)
                 {
                     availableUnits.Add(unit);
                     unit.ChangeColorTo(Color.white);

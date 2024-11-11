@@ -49,6 +49,7 @@ public class HermitCrab : Unit
             case TileType.sand:
                 break;
             case TileType.current:
+                isMoving = true;
                 yield return StartCoroutine("ForcedMoveTo", currentTile.GetFacingTile(currentTile));
                 break;
             case TileType.anemone:
