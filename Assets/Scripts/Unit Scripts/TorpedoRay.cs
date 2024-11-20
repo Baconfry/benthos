@@ -38,11 +38,11 @@ public class TorpedoRay : Unit
         }
         soundEffects.clip = attackSound;
         soundEffects.Play();
-
+        yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         if (targetTile.occupyingUnit != null)
         {
             yield return StartCoroutine(targetTile.occupyingUnit.TakeDamageFrom(this, damageValue, 0));
-            yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
+            //yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
             foreach (Unit unit in GetBorderingUnits(targetTile))
             {
                 if (unit.currentTile == targetTile.GetTileRight(targetTile) || unit.currentTile == targetTile.GetTileLeft(targetTile))

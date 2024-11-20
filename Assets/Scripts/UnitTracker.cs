@@ -101,7 +101,7 @@ public class UnitTracker : Definitions
             List<int> survivingIDs = new List<int>();
             foreach (Unit unit in unitList)
             {
-                if (!survivingIDs.Contains(unit.playerID)) survivingIDs.Add(unit.playerID);
+                if (!survivingIDs.Contains(unit.playerID) && unit.canMove) survivingIDs.Add(unit.playerID);
             }
             if (survivingIDs.Count == 1)
             {

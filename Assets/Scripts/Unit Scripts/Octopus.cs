@@ -123,19 +123,19 @@ public class Octopus : Unit
     {
         if (targetTile.xCoordinate == currentTile.xCoordinate && targetTile.yCoordinate > currentTile.yCoordinate && currentTile.GetTileAbove(currentTile) != null)
         {
-            Instantiate(attackAnimation, currentTile.GetTileAbove(currentTile).transform.position, Quaternion.Euler(0f, 0f, 350f));
+            Instantiate(attackAnimation, currentTile.GetTileAbove(currentTile).transform.position, Quaternion.Euler(0f, 0f, 0f));
         }
         else if (targetTile.xCoordinate == currentTile.xCoordinate && targetTile.yCoordinate < currentTile.yCoordinate && currentTile.GetTileBelow(currentTile) != null)
         {
-            Instantiate(attackAnimation, currentTile.GetTileBelow(currentTile).transform.position, Quaternion.Euler(0f, 0f, 170f));
+            Instantiate(attackAnimation, currentTile.GetTileBelow(currentTile).transform.position, Quaternion.Euler(0f, 0f, 180f));
         }
         else if (targetTile.xCoordinate > currentTile.xCoordinate && targetTile.yCoordinate == currentTile.yCoordinate && currentTile.GetTileRight(currentTile) != null)
         {
-            Instantiate(attackAnimation, currentTile.GetTileRight(currentTile).transform.position, Quaternion.Euler(0f, 0f, 260f));
+            Instantiate(attackAnimation, currentTile.GetTileRight(currentTile).transform.position, Quaternion.Euler(0f, 0f, 270f));
         }
         else if (targetTile.xCoordinate < currentTile.xCoordinate && targetTile.yCoordinate == currentTile.yCoordinate && currentTile.GetTileLeft(currentTile) != null)
         {
-            Instantiate(attackAnimation, currentTile.GetTileLeft(currentTile).transform.position, Quaternion.Euler(0f, 0f, 80f));
+            Instantiate(attackAnimation, currentTile.GetTileLeft(currentTile).transform.position, Quaternion.Euler(0f, 0f, 90f));
         }
         soundEffects.clip = attackSound;
         soundEffects.Play();

@@ -537,6 +537,8 @@ MonoBehaviour:
   armorBroken: 0
   healOnKill: 0
   makesContact: 0
+  isMoving: 0
+  canMove: 1
   bumpImmune: 0
   passThroughEnemies: 0
   isAlpha: 0
@@ -551,7 +553,7 @@ MonoBehaviour:
   currentTurnCooldown: 0
   attackPenalty: 0
   currentTile: {fileID: 0}
-  attackAnimation: {fileID: 4411407228461330351, guid: 0e57c9500c625894eb2e26046c314226, type: 3}
+  attackAnimation: {fileID: 4411407228461330351, guid: 9eefa25fc4e02ff46bd88f6656d2594f, type: 3}
   slowAnimation: {fileID: 4411407228461330351, guid: f019f8587cd654d4e9148d58070a58f8, type: 3}
   damageNumber: {fileID: 4597980467803383037, guid: 175712fbac058574891e98dc6d197852, type: 3}
   attackSound: {fileID: 8300000, guid: 67f3ad40052ff9346b46d3f9db096d32, type: 3}

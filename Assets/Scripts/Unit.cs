@@ -285,6 +285,7 @@ public class Unit : Definitions
         Instantiate(attackAnimation, targetTile.transform.position, transform.rotation);
         soundEffects.clip = attackSound;
         soundEffects.Play();
+        yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         if (targetTile.occupyingUnit != null)
         {
             yield return StartCoroutine(targetTile.occupyingUnit.TakeDamageFrom(this, damageValue, 0));
@@ -596,6 +597,7 @@ public class Unit : Definitions
     public virtual IEnumerator Heal(int healingAmount) //OVERRIDE: Hermit Crab
     {
         yield return null;
+        if (currentHealth == 0) yield break;
         if (currentHealth > 0)
         {
             Instantiate(damageNumber, transform.position, transform.rotation).GetComponent<DamageNumber>().value = -healingAmount;

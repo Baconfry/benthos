@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 5dbe7c309c9c0d5448ad8268e98cba2e, type: 3}
+  m_Sprite: {fileID: 3199290549312717898, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,10 +96,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 53957bc6f1485734798554e71d3f5a2e, type: 3}
-  - {fileID: 21300000, guid: d2114a1c8065a8542955e5e8f9479d3f, type: 3}
-  - {fileID: 21300000, guid: 5dbe7c309c9c0d5448ad8268e98cba2e, type: 3}
-  - {fileID: 21300000, guid: 9c7989fefdabce24788e99ab4c77a32c, type: 3}
-  - {fileID: 21300000, guid: e9ac2e3cc625c4443b76815ab174a876, type: 3}
-  - {fileID: 21300000, guid: 471c85bbd4c5f814f91c3baeee7732c3, type: 3}
-  secondsPerFrame: 0.2
+  - {fileID: -411821595071682554, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -4349997451061796356, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -4782876853037067114, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -5824603261286603568, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 3199290549312717898, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 465650386785178867, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -3841451353408281821, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -3180009796681459842, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 6763225381608840377, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 5735436290092720400, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 4670006374300469027, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 2576357027895780999, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 8087332257690570888, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -8249581457282496297, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: -2227619578723992511, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 2300140868260125530, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  - {fileID: 1519610721852036535, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
+  secondsPerFrame: 0.1

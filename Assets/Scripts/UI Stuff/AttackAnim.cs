@@ -6,6 +6,7 @@ public class AttackAnim : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private float secondsPerFrame;
+    [SerializeField] private bool loopAnim = false;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,14 @@ public class AttackAnim : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[i];
             yield return new WaitForSeconds(secondsPerFrame * Settings.TurnDelay);
+        }
+        while (loopAnim)
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                spriteRenderer.sprite = sprites[i];
+                yield return new WaitForSeconds(secondsPerFrame * Settings.TurnDelay);
+            }
         }
         Destroy(this.gameObject);
     }

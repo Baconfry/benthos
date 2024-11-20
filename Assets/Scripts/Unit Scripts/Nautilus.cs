@@ -77,6 +77,7 @@ public class Nautilus : Unit
         }
         soundEffects.clip = attackSound;
         soundEffects.Play();
+        yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         if (targetTile.occupyingUnit != null)
         {
             Unit targetUnit = targetTile.occupyingUnit;

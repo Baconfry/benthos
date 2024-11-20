@@ -35,6 +35,7 @@ public class Snail : Unit
         Instantiate(attackAnimation, targetTile.transform.position, transform.rotation);
         soundEffects.clip = attackSound;
         soundEffects.Play();
+        yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         if (targetTile.occupyingUnit != null)
         {
             yield return StartCoroutine(targetTile.occupyingUnit.TakeDamageFrom(this, damageValue, 1));           

@@ -36,7 +36,7 @@ public class Manowar : Unit
         }
         soundEffects.clip = attackSound;
         soundEffects.Play();
-
+        yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         if (targetTile.occupyingUnit != null)
         {
             if (!targetTile.occupyingUnit.isArmored && targetTile.occupyingUnit.isPoisoned)
