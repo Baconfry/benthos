@@ -529,6 +529,7 @@ MonoBehaviour:
   slowAnimation: {fileID: 4411407228461330351, guid: f019f8587cd654d4e9148d58070a58f8, type: 3}
   damageNumber: {fileID: 4597980467803383037, guid: 175712fbac058574891e98dc6d197852, type: 3}
   attackSound: {fileID: 8300000, guid: 758907a719a7bef4d9d202eefa014226, type: 3}
+  explodeAnimation: {fileID: 4411407228461330351, guid: ffc3dbeae29143f47993684bed59bed4, type: 3}
 --- !u!1 &4759053764547990301
 GameObject:
   m_ObjectHideFlags: 0

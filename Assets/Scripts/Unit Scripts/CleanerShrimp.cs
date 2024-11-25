@@ -162,6 +162,7 @@ public class CleanerShrimp : Unit
                 Instantiate(healAnimation, targetUnit.transform.position, transform.rotation);
                 soundEffects.clip = healSound;
                 soundEffects.Play();
+                yield return new WaitForSeconds(healAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
                 if (targetUnit.currentHealth < targetUnit.maxHealth) yield return targetUnit.StartCoroutine("Heal", 1);
                 if (isAlpha && targetUnit.isPoisoned && targetUnit.GetComponent<Nudibranch>() == null) targetUnit.isPoisoned = false;
                 targetUnit.DelayTurnBy(-20);
@@ -172,6 +173,7 @@ public class CleanerShrimp : Unit
                 soundEffects.clip = attackSound;
                 soundEffects.Play();
                 Instantiate(attackAnimation, targetUnit.transform.position, transform.rotation);
+                yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
                 yield return StartCoroutine(targetUnit.TakeDamageFrom(this, damageValue, 0));
             }           
         }

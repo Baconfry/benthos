@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Urchin : Unit
 {
+    [SerializeField] private GameObject explodeAnimation;
+
     protected override void Initialize()
     {
         movementType = MoveType.benthic;
@@ -69,7 +71,8 @@ public class Urchin : Unit
         //Instantiate(attackAnimation, currentTile.transform.position, transform.rotation);
         soundEffects.clip = attackSound;
         soundEffects.Play();
-
+        Instantiate(explodeAnimation, transform.position, transform.rotation);
+        yield return new WaitForSeconds(explodeAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         foreach (GridTile tile in currentTile.Get8SurroundingTiles(currentTile))
         {
             Instantiate(attackAnimation, tile.transform.position, transform.rotation);
