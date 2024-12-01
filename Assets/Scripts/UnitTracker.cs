@@ -46,6 +46,7 @@ public class UnitTracker : Definitions
             //GameObject.Find("DefaultPlayerUnits").SetActive(false);
             yield return null;
             if (this.gameObject.tag != "Tutorial" && Random.Range(0, 2) == 0) grid.SwitchTeamPositions();
+            StartCoroutine(ChangeOutcropTransparency());
             yield return StartCoroutine(DeployUnits()); 
         }
         else
@@ -59,8 +60,31 @@ public class UnitTracker : Definitions
                 GameObject.Find("sandbox").SetActive(false);
             }*/
             yield return null;
+            StartCoroutine(ChangeOutcropTransparency());
         }
         yield return StartCoroutine(TurnControl());
+    }
+
+    IEnumerator ChangeOutcropTransparency()
+    {
+        while (true)
+        {
+            if (cursor.GetActiveTile() != null)
+            {
+                GridTile activeTile = cursor.GetActiveTile();
+                if (activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).tileType == TileType.outcrop)
+                {
+                    grid.ColorAllTiles(Color.white);
+                    activeTile.GetTileBelow(activeTile).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+                }
+                else
+                {
+                    grid.ColorAllTiles(Color.white);
+                }
+                
+            }
+            yield return null;
+        }
     }
 
     public List<Unit> GetAllEnemiesOfID(int id)

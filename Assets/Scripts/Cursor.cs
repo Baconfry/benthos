@@ -28,13 +28,14 @@ public class Cursor : Definitions
     void Awake()
     {
         unitTracker = GameObject.Find("UnitTracker").GetComponent<UnitTracker>();
-        autoSprite = GameObject.Find("auto").GetComponent<SpriteRenderer>();
-        fastSprite = GameObject.Find("fast").GetComponent<SpriteRenderer>();
-        normalSprite = GameObject.Find("normal").GetComponent<SpriteRenderer>();
-        slowSprite = GameObject.Find("slow").GetComponent<SpriteRenderer>();
-        sandboxSprite = GameObject.Find("sandbox").GetComponent<SpriteRenderer>();
-        turboSprite = GameObject.Find("turbo").GetComponent<SpriteRenderer>();
-        startSprite = GameObject.Find("start").GetComponent<SpriteRenderer>();
+        GameObject canvas = GameObject.Find("Canvas");
+        autoSprite = canvas.transform.Find("auto").GetComponent<SpriteRenderer>();
+        fastSprite = canvas.transform.Find("fast").GetComponent<SpriteRenderer>();
+        normalSprite = canvas.transform.Find("normal").GetComponent<SpriteRenderer>();
+        slowSprite = canvas.transform.Find("slow").GetComponent<SpriteRenderer>();
+        sandboxSprite = canvas.transform.Find("sandbox").GetComponent<SpriteRenderer>();
+        turboSprite = canvas.transform.Find("turbo").GetComponent<SpriteRenderer>();
+        startSprite = canvas.transform.Find("start").GetComponent<SpriteRenderer>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

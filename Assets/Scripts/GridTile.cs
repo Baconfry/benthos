@@ -26,6 +26,7 @@ public class GridTile : Definitions
     public List<GridTile> path = new List<GridTile>();
     public GameObject lavaAnimation;
     public GameObject sandAnimation;
+    public GameObject currentAnimation;
     private DigitDisplay sandTimerDisplay1;
     private DigitDisplay sandTimerDisplay2;
     
@@ -37,6 +38,7 @@ public class GridTile : Definitions
         sandTimerDisplay2 = transform.Find("sandTimerDisplay2").GetComponent<DigitDisplay>();
         outliner = transform.Find("outliner").gameObject;
         grid = GameObject.FindWithTag("Grid").GetComponent<CustomGrid>();
+        currentAnimation = transform.Find("currentAnim").gameObject;
     }
     // Start is called before the first frame update
     IEnumerator Start()
@@ -329,6 +331,14 @@ public class GridTile : Definitions
     public void ChangeTileTo(TileType newType)
     {
         tileType = newType;
+        currentAnimation.SetActive(tileType == TileType.current);
+        
+        if (currentAnimation.activeSelf) 
+        {
+            Color tileColor = GetComponent<SpriteRenderer>().color;
+            Color prefabColor = currentAnimation.GetComponent<SpriteRenderer>().color;
+            currentAnimation.GetComponent<SpriteRenderer>().color = new Color(prefabColor.r, prefabColor.g, prefabColor.b, tileColor.a);
+        }
         switch (tileType)
         {
             case TileType.stone:
@@ -336,6 +346,7 @@ public class GridTile : Definitions
                 break;
             case TileType.outcrop:
                 spriteRenderer.sprite = sprites[1];
+                spriteRenderer.sortingOrder = 4;
                 break;
             case TileType.algae:
                 spriteRenderer.sprite = sprites[2];
@@ -370,6 +381,7 @@ public class GridTile : Definitions
                 Debug.Log("attempted to change to invalid type");
                 break;
         }
+        
     }
 
     public void UpdateSandTimer()
