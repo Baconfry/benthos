@@ -29,7 +29,8 @@ public class GridTile : Definitions
     public GameObject currentAnimation;
     private DigitDisplay sandTimerDisplay1;
     private DigitDisplay sandTimerDisplay2;
-    
+    public SpriteRenderer largeSprite;
+    [SerializeField] private Sprite[] largeSprites;
     
     void Awake()
     {
@@ -39,6 +40,7 @@ public class GridTile : Definitions
         outliner = transform.Find("outliner").gameObject;
         grid = GameObject.FindWithTag("Grid").GetComponent<CustomGrid>();
         currentAnimation = transform.Find("currentAnim").gameObject;
+        largeSprite = transform.Find("largePart").GetComponent<SpriteRenderer>();
     }
     // Start is called before the first frame update
     IEnumerator Start()
@@ -346,7 +348,6 @@ public class GridTile : Definitions
                 break;
             case TileType.outcrop:
                 spriteRenderer.sprite = sprites[1];
-                spriteRenderer.sortingOrder = 4;
                 break;
             case TileType.algae:
                 spriteRenderer.sprite = sprites[2];
@@ -381,7 +382,44 @@ public class GridTile : Definitions
                 Debug.Log("attempted to change to invalid type");
                 break;
         }
-        
+        //spriteRenderer.sortingOrder = IsSolid() ? 12 - yCoordinate: -1;
+        if (IsSolid())
+        {
+            largeSprite.enabled = true;
+            largeSprite.sortingOrder = 12 - yCoordinate;
+            switch (tileType)
+            {
+                case TileType.outcrop:
+                    switch (Settings.TileSetIndex)
+                    {
+                        case 0:
+                            largeSprite.sprite = largeSprites[0];
+                            break;
+                        case 1:
+                            largeSprite.sprite = largeSprites[1];
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            break;
+                    }                  
+                    break;
+                case TileType.coral:
+                    largeSprite.sprite = largeSprites[2];
+                    break;
+                case TileType.fireCoral:
+                    largeSprite.sprite = largeSprites[3];
+                    break;
+                default:
+                    Debug.Log("some other solid tile detected");
+                    break;
+            }
+
+        }
+        else
+        {
+            largeSprite.enabled = false;
+        }
     }
 
     public void UpdateSandTimer()

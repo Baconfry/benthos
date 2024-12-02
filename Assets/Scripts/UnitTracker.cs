@@ -72,14 +72,14 @@ public class UnitTracker : Definitions
             if (cursor.GetActiveTile() != null)
             {
                 GridTile activeTile = cursor.GetActiveTile();
-                if (activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).tileType == TileType.outcrop)
+                if (!activeTile.IsSolid() && activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).IsSolid())
                 {
-                    grid.ColorAllTiles(Color.white);
-                    activeTile.GetTileBelow(activeTile).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+                    grid.ColorAllLargeSprites(Color.white);
+                    activeTile.GetTileBelow(activeTile).largeSprite.color = new Color(1f, 1f, 1f, 0.4f);
                 }
                 else
                 {
-                    grid.ColorAllTiles(Color.white);
+                    grid.ColorAllLargeSprites(Color.white);
                 }
                 
             }

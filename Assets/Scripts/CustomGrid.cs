@@ -78,6 +78,18 @@ public class CustomGrid : Definitions
             for (int j = 0; j < gridTiles.GetLength(1); j++)
             {
                 gridTiles[i, j].GetComponent<SpriteRenderer>().color = newColor;
+                gridTiles[i, j].largeSprite.color = newColor;
+            }
+        }
+    }
+
+    public void ColorAllLargeSprites(Color newColor)
+    {
+        for (int i = 0; i < gridTiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < gridTiles.GetLength(1); j++)
+            {
+                gridTiles[i, j].largeSprite.color = newColor;
             }
         }
     }
