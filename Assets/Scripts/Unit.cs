@@ -240,7 +240,7 @@ public class Unit : Definitions
             case TileType.stone:
                 break;
             case TileType.algae:
-                if (currentHealth < maxHealth)
+                if (currentHealth < maxHealth && currentHealth > 0)
                 {
                     yield return StartCoroutine("Heal", 1);
                     currentTile.ChangeTileTo(TileType.stone);
@@ -597,7 +597,6 @@ public class Unit : Definitions
     public virtual IEnumerator Heal(int healingAmount) //OVERRIDE: Hermit Crab
     {
         yield return null;
-        if (currentHealth == 0) yield break;
         if (currentHealth > 0)
         {
             Instantiate(damageNumber, transform.position, transform.rotation).GetComponent<DamageNumber>().value = -healingAmount;

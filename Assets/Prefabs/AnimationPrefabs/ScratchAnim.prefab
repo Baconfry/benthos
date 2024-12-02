@@ -105,8 +105,5 @@ MonoBehaviour:
   - {fileID: 3494441364881759113, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
   - {fileID: 9006468893231936563, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
   - {fileID: 1666628327511681385, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
-  - {fileID: 4409824912766919535, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
-  - {fileID: -5767983304951671067, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
-  - {fileID: 8433278419508480275, guid: ff14effd5fd9f014186c9599d5cd3ef2, type: 3}
   secondsPerFrame: 0.1
   loopAnim: 0

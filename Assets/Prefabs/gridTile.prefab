@@ -280,7 +280,7 @@ MonoBehaviour:
   spriteSet2:
   - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
   - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
-  - {fileID: 21300000, guid: f4c5923e704f0954d9b0cea5098337ff, type: 3}
+  - {fileID: 21300000, guid: 1e7c4c477f1b5ac47b5050fcb0fb5559, type: 3}
   - {fileID: 21300000, guid: c3811e5170d7a5e4889700f1bddbc33e, type: 3}
   - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
   - {fileID: 21300000, guid: c3811e5170d7a5e4889700f1bddbc33e, type: 3}
@@ -358,12 +358,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 99a5e1841612a334fb7b0b57f75c4180, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -387,7 +387,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -596,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917220088099507791, guid: 8975f203533de664fbe7d9b11152027b, type: 3}
       propertyPath: secondsPerFrame
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8918791508371940206, guid: 8975f203533de664fbe7d9b11152027b, type: 3}
       propertyPath: m_RootOrder

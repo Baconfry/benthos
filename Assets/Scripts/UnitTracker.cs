@@ -126,7 +126,7 @@ public class UnitTracker : Definitions
             }
             if (survivingIDs.Count == 1)
             {
-                //Debug.Log("player " + survivingIDs[0] + " won");
+                Debug.Log("player " + survivingIDs[0] + " won");
                 unitList.Clear();
                 availableUnits.Clear();
             }
@@ -367,7 +367,7 @@ public class UnitTracker : Definitions
         }
         else
         {
-            SceneManager.LoadScene("Start_Menu");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
@@ -388,6 +388,7 @@ public class UnitTracker : Definitions
 
                 while (activeUnit == null) //choose an active unit from those available
                 {
+                    if (unitList.Count == 0) yield break;
                     if (Settings.AutopilotMode)
                     {
                         yield return ai.StartCoroutine("TakeAITurn", availableUnits);
@@ -519,7 +520,7 @@ public class UnitTracker : Definitions
 
                         availableUnits.Remove(activeUnit);
                         activeUnit.UpdateIcons();
-                        activeUnit.ChangeColorTo(Color.gray);
+                        activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                         activeUnit = null;
 
                     }
@@ -544,7 +545,7 @@ public class UnitTracker : Definitions
                             availableUnits.Remove(activeUnit);
                             activeUnit.UpdateIcons();
                             //yield return activeUnit.StartCoroutine("EndTurn");
-                            activeUnit.ChangeColorTo(Color.gray);
+                            activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                             activeUnit = null;
                         }
                         else //cancelled action
@@ -569,7 +570,7 @@ public class UnitTracker : Definitions
                     {
                         availableUnits.Remove(unit);
                         unit.EnableOutline(false);
-                        unit.ChangeColorTo(Color.gray);
+                        unit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                         //Debug.Log("you delayed yourself during your own turn");
                     }
 
@@ -650,7 +651,7 @@ public class UnitTracker : Definitions
 
                     availableUnits.Remove(activeUnit);
                     if (activeUnit.currentTile != startingTile) yield return activeUnit.StartCoroutine("EndTurn");
-                    activeUnit.ChangeColorTo(Color.gray);
+                    activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                     try
                     {
                         activeUnit.UpdateIcons();
@@ -667,7 +668,7 @@ public class UnitTracker : Definitions
                     yield return new WaitForSeconds(activeUnit.GetAttackDelay());
                     //yield return new WaitForSeconds(Settings.TurnDelay);
                     yield return activeUnit.StartCoroutine("EndTurn");
-                    activeUnit.ChangeColorTo(Color.gray);
+                    activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                     try
                     {
                         activeUnit.UpdateIcons();
@@ -719,7 +720,7 @@ public class UnitTracker : Definitions
                     availableUnits.Remove(activeUnit);
                     activeUnit.UpdateIcons();
                     if (activeUnit.currentTile != startingTile) yield return activeUnit.StartCoroutine("EndTurn");
-                    activeUnit.ChangeColorTo(Color.gray);
+                    activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                     activeUnit = null;
                     delaySucceeded = false;
                     break;
@@ -757,7 +758,7 @@ public class UnitTracker : Definitions
                 }
                 availableUnits.Remove(activeUnit);
 
-                activeUnit.ChangeColorTo(Color.gray);
+                activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                 try
                 {
                     activeUnit.UpdateIcons();

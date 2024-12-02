@@ -274,7 +274,7 @@ public class AIControl : Definitions
                 else if (unit.currentTurnCooldown > 0 && aiUnits.Contains(unit))
                 {
                     aiUnits.Remove(unit);
-                    unit.ChangeColorTo(Color.gray);
+                    unit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
                     //Debug.Log("you delayed yourself during your own turn");
                 }
             }
@@ -283,7 +283,7 @@ public class AIControl : Definitions
             grid.ResetAllOutliners();
             
             yield return activeUnit.StartCoroutine("EndTurn");
-            activeUnit.ChangeColorTo(Color.gray);
+            activeUnit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
             try
             {
                 activeUnit.UpdateIcons();
