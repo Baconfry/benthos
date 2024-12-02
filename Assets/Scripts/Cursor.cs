@@ -299,7 +299,7 @@ public class Cursor : Definitions
             {
                 unit.SetAlphaStatus(false);
             }*/
-            selectedUnit.SetAlphaStatus(true);
+            if (selectedUnit.canMove) selectedUnit.SetAlphaStatus(true);
         }
 
     }

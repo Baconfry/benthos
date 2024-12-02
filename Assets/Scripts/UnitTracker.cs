@@ -157,11 +157,18 @@ public class UnitTracker : Definitions
     public void AssignAllAlphas()
     {
         bool hasNonAlphaUnit = false;
+        List<Unit> eligibleUnits = new List<Unit>();
+
         foreach (Unit unit in unitList)
+        {
+            if (unit.canMove) eligibleUnits.Add(unit);
+        }
+
+        foreach (Unit unit in eligibleUnits)
         {
             if (!unit.isAlpha) hasNonAlphaUnit = true;
         }
-        foreach (Unit unit in unitList)
+        foreach (Unit unit in eligibleUnits)
         {
             unit.SetAlphaStatus(hasNonAlphaUnit ? true : false);
         }
@@ -281,7 +288,7 @@ public class UnitTracker : Definitions
         }
         if (playerAlphaCount > 0)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (i != humanPlayerID && GetAllAlliesOfID(i).Count > 0)
                 {
