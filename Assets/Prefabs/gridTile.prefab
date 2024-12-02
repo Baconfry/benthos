@@ -267,26 +267,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteSet1:
-  - {fileID: 21300000, guid: 99a5e1841612a334fb7b0b57f75c4180, type: 3}
-  - {fileID: 21300000, guid: 99a5e1841612a334fb7b0b57f75c4180, type: 3}
+  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
+  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
   - {fileID: 21300000, guid: f4c5923e704f0954d9b0cea5098337ff, type: 3}
   - {fileID: 21300000, guid: a4c221828ca1f8843b9cb5412e9e9083, type: 3}
-  - {fileID: 21300000, guid: 99a5e1841612a334fb7b0b57f75c4180, type: 3}
+  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
   - {fileID: 21300000, guid: a4c221828ca1f8843b9cb5412e9e9083, type: 3}
   - {fileID: 21300000, guid: 3490b85a49856b04aa399b3e21570910, type: 3}
   - {fileID: 21300000, guid: eb997cc7441e4a141bbc1737a4d10cce, type: 3}
-  - {fileID: 21300000, guid: 99a5e1841612a334fb7b0b57f75c4180, type: 3}
+  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
   - {fileID: 21300000, guid: 8c544b8ee01c3904aa39f8646b6f248b, type: 3}
   spriteSet2:
-  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
-  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
+  - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
+  - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
   - {fileID: 21300000, guid: f4c5923e704f0954d9b0cea5098337ff, type: 3}
-  - {fileID: 21300000, guid: a4c221828ca1f8843b9cb5412e9e9083, type: 3}
-  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
-  - {fileID: 21300000, guid: a4c221828ca1f8843b9cb5412e9e9083, type: 3}
+  - {fileID: 21300000, guid: c3811e5170d7a5e4889700f1bddbc33e, type: 3}
+  - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
+  - {fileID: 21300000, guid: c3811e5170d7a5e4889700f1bddbc33e, type: 3}
   - {fileID: 21300000, guid: ec48c36a7fbb2274e8cede8110702971, type: 3}
   - {fileID: 21300000, guid: eb997cc7441e4a141bbc1737a4d10cce, type: 3}
-  - {fileID: 21300000, guid: 9b67278c4f1f3bc45950c0d53b110e06, type: 3}
+  - {fileID: 21300000, guid: 95d9fd0b2f6804b4baea1a6145aaa3b2, type: 3}
   - {fileID: 21300000, guid: 8c544b8ee01c3904aa39f8646b6f248b, type: 3}
   spriteSet3:
   - {fileID: 0}
@@ -315,7 +315,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e7fc65907dce8014a82b9ed85994c1f1, type: 3}
   - {fileID: 21300000, guid: 6ba8edf394fa8ad49945f6c4c01dc1ce, type: 3}
   - {fileID: 21300000, guid: dfb2e00af06d6b245ae7ad0976a1253c, type: 3}
+  - {fileID: 21300000, guid: 30790baa533865a4f93ac5d7bd3a8194, type: 3}
   - {fileID: 21300000, guid: 73663698a85642b459fb46d97084baca, type: 3}
+  - {fileID: 21300000, guid: 435c745b267134d408e4bdf75a20dbae, type: 3}
 --- !u!212 &5746411233189946059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -431,7 +433,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7758929926578122274}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

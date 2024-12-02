@@ -108,10 +108,5 @@ MonoBehaviour:
   - {fileID: 5735436290092720400, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
   - {fileID: 4670006374300469027, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
   - {fileID: 2576357027895780999, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
-  - {fileID: 8087332257690570888, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
-  - {fileID: -8249581457282496297, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
-  - {fileID: -2227619578723992511, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
-  - {fileID: 2300140868260125530, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
-  - {fileID: 1519610721852036535, guid: 2731c8aab72e48544ae4b8dca6a3045f, type: 3}
   secondsPerFrame: 0.1
   loopAnim: 0

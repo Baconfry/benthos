@@ -182,6 +182,7 @@ public class CleanerShrimp : Unit
             soundEffects.clip = attackSound;
             soundEffects.Play();
             Instantiate(attackAnimation, targetTile.transform.position, transform.rotation);
+            yield return new WaitForSeconds(attackAnimation.GetComponent<AttackAnim>().GetTotalAnimationTime());
         }
         if (targetTile.tileType == TileType.coral)
         {

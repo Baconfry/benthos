@@ -67,12 +67,13 @@ public class UnitTracker : Definitions
 
     IEnumerator ChangeOutcropTransparency()
     {
+        yield return null;
         while (true)
         {
             if (cursor.GetActiveTile() != null)
             {
                 GridTile activeTile = cursor.GetActiveTile();
-                if (!activeTile.IsSolid() && activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).IsSolid())
+                if (activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).IsSolid())// && !activeTile.IsSolid())
                 {
                     grid.ColorAllLargeSprites(Color.white);
                     activeTile.GetTileBelow(activeTile).largeSprite.color = new Color(1f, 1f, 1f, 0.4f);

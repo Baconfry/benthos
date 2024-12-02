@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Text: "Here at the bottom right we have\nhydrothermal vents that will instantly
     kill\nany unit, as well as powerful currents \nthat will sweep most units onto
     them.\n\nThe snail is one of the few units that can\nresist the current. Move
-    it onto a current \n(green arrow) tile and end its turn."
+    it onto a current \n(moving arrow) tile and end its turn."
 --- !u!222 &127940041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
     Move any of your units up to
     the pink
 
-    stone (coral) tiles that the enemies are
+    tree (coral) tiles that the enemies are
 
     trapped behind.'
 --- !u!222 &131635112
@@ -1702,8 +1702,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "To get the the enemy, you'll have to\nbreak through. These coral tiles
-    (pink\nstones) can be broken by most attacks.\n\nAttack the coral tiles with
-    each of your\nunits, then defeat all three enemies to \nclear the level."
+    (pink\ntrees) can be broken by most attacks.\n\nAttack the coral tiles with each
+    of your\nunits, then defeat all three enemies to \nclear the level."
 --- !u!222 &414372047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2619,7 +2619,7 @@ MonoBehaviour:
     Move the crab to one of
     the anemone
 
-    (poison spike) tiles.'
+    (blobby pink) tiles.'
 --- !u!222 &1111060660
 CanvasRenderer:
   m_ObjectHideFlags: 0

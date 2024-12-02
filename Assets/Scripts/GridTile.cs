@@ -405,10 +405,34 @@ public class GridTile : Definitions
                     }                  
                     break;
                 case TileType.coral:
-                    largeSprite.sprite = largeSprites[2];
+                    switch (Settings.TileSetIndex)
+                    {
+                        case 0:
+                            largeSprite.sprite = largeSprites[2];
+                            break;
+                        case 1:
+                            largeSprite.sprite = largeSprites[3];
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case TileType.fireCoral:
-                    largeSprite.sprite = largeSprites[3];
+                    switch (Settings.TileSetIndex)
+                    {
+                        case 0:
+                            largeSprite.sprite = largeSprites[4];
+                            break;
+                        case 1:
+                            largeSprite.sprite = largeSprites[5];
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     Debug.Log("some other solid tile detected");

@@ -38,7 +38,7 @@ public class Urchin : Unit
 
     public override void UpdateIcons()
     {
-        //digitDisplay.ChangeDisplayTo(currentHealth);
+        digitDisplay.ChangeDisplayTo(currentHealth);
     }
 
     public override IEnumerator Attack(GridTile targetTile)
