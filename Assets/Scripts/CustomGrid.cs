@@ -94,6 +94,18 @@ public class CustomGrid : Definitions
         }
     }
 
+    public void UnblockUnits(Color newColor)
+    {
+        for (int i = 0; i < gridTiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < gridTiles.GetLength(1); j++)
+            {
+                if (gridTiles[i, j].GetTileAbove(gridTiles[i, j]) != null && gridTiles[i, j].GetTileAbove(gridTiles[i, j]).occupyingUnit != null)
+                gridTiles[i, j].largeSprite.color = newColor;
+            }
+        }
+    }
+
     public void ClearAllPaths()
     {
         for (int i = 0; i < gridTiles.GetLength(0); i++)

@@ -70,21 +70,17 @@ public class UnitTracker : Definitions
         yield return null;
         while (true)
         {
+            grid.ColorAllLargeSprites(Color.white);
+            grid.UnblockUnits(new Color(1f, 1f, 1f, 0.6f));
             if (cursor.GetActiveTile() != null)
             {
                 GridTile activeTile = cursor.GetActiveTile();
                 if (activeTile.GetTileBelow(activeTile) != null && activeTile.GetTileBelow(activeTile).IsSolid())// && !activeTile.IsSolid())
                 {
-                    grid.ColorAllLargeSprites(Color.white);
                     activeTile.GetTileBelow(activeTile).largeSprite.color = new Color(1f, 1f, 1f, 0.4f);
-                }
-                else
-                {
-                    grid.ColorAllLargeSprites(Color.white);
-                }
-                
+                }             
             }
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
