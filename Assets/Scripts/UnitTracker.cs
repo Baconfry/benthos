@@ -329,7 +329,7 @@ public class UnitTracker : Definitions
         yield return null;
         foreach (Unit unit in unitList)
         {
-            if (unit.canMove) unit.ChangeColorTo(Color.gray);
+            if (unit.canMove) unit.ChangeColorTo(new Color(0.75f, 0.75f, 0.75f, 1f));
         }
         while (unitList.Count > 0) //end game if all units die
         {
