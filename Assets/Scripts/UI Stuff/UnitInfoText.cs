@@ -88,7 +88,7 @@ public class UnitInfoText : Definitions
                 displayText.text = "BOBBIT WORM\nbenthic, immune to pusing\n4 DMG\n\n\ngains 1-use armor once per turn\nRANGE: 1\nHEALTH: 6\nMOV COST: 30\nATT COST: 40";
                 break;
             case 16:
-                displayText.text = "SEA URCHIN\nbenthic\n3 DMG\npassive\nexplodes in 8-tile radius when killed\n\nRANGE: 0\nHEALTH: 1\nMOV COST: N/A\nATT COST: N/A";
+                displayText.text = "SEA URCHIN\nbenthic\n3 DMG\npassive\nexplodes in 3x3 radius when killed\n\nRANGE: 0\nHEALTH: 1\nMOV COST: N/A\nATT COST: N/A";
                 break;
             case 98:
                 displayText.text = "alpha HERMIT CRAB (exposed)\nbenthic\n2 DMG\ncannot be healed\n\n\nRANGE: 5\nHEALTH: 1\nMOV COST: 15\nATT COST: 10";

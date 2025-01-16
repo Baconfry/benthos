@@ -148,8 +148,8 @@ MonoBehaviour:
   xLength: 11
   yLength: 9
   musicTracks:
-  - {fileID: 8300000, guid: 2488f015a5ec5c84e872f2cf62d80808, type: 3}
-  - {fileID: 8300000, guid: 2488f015a5ec5c84e872f2cf62d80808, type: 3}
+  - {fileID: 8300000, guid: 1d7dca8c87a62f54fbb3aaf07310f74c, type: 3}
+  - {fileID: 8300000, guid: 1d7dca8c87a62f54fbb3aaf07310f74c, type: 3}
 --- !u!82 &8232320365764240606
 AudioSource:
   m_ObjectHideFlags: 0
